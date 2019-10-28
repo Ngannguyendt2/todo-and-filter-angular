@@ -4,10 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontSizeComponent } from './products/font-size/font-size.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PetComponent } from './products/pet/pet.component';
 import { CaculatorComponent } from './products/caculator/caculator.component';
 import { ColorComponent } from './products/color/color.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { FilterComponent } from './products/filter/filter.component';
+import { StatusComponent } from './products/status/status.component';
+import { TodoComponent } from './products/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,17 @@ import { ColorComponent } from './products/color/color.component';
     FontSizeComponent,
     PetComponent,
     CaculatorComponent,
-    ColorComponent
+    ColorComponent,
+    ProductListComponent,
+    FilterComponent,
+    StatusComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
