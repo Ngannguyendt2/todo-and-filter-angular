@@ -1,0 +1,43 @@
+<div class="col-12 mt-4">
+
+  <div class="card">
+    <div class="card-header">
+      <h1>Danh sach san pham</h1>
+    </div>
+    <app-filter (filter)="setFilter($event)"></app-filter>
+    <div class="mb-2">
+      <button (click)="changeImage()" class="btn btn-info">Show/Hide</button>
+    </div>
+    <app-status (status)="getByStatus($event)"></app-status>
+    <div class="content">
+      <table class="table table-bordered mb-1">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Ten san pham</th>
+          <th>Ngay sinh</th>
+          <th *ngIf="toggle">Hinh anh</th>
+          <th>Gia</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of productFilter;let i=index;">
+          <td>{{i + 1}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.birth|date:'medium'}}</td>
+          <td *ngIf="toggle"><img src="{{product.image}}" [width]="widthImg"></td>
+          <td>{{product.price}}</td>
+          <td>{{product.status}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="delete(i)">Xoa</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary">Add</button>
+    </div>
+  </div>
+
+</div>
